@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class VideoService {
-  apiURL = "http://localhost:4000/video"
+  apiURL = "https://staging-practicehub-u9p2.encr.app/video"
 
   constructor(private http: HttpClient) { }
 
