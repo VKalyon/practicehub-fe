@@ -14,4 +14,18 @@ export class VideoComponent {
   printVideos() {
     this.videoService.getAllVideos().subscribe(data => console.log(data))
   }
+
+  fileSelected(event: any) {
+    const file = event.target.files[0];
+    const title = (document.getElementById('videoTitle') as HTMLInputElement).value;
+
+    if (file) {
+      const formData = new FormData();
+      formData.append("file", file)
+      formData.append("title", title)
+      const upload$ = this.videoService.postVideo(formData)
+      
+      upload$.subscribe(res => console.log(res))
+    }
+  }
 }

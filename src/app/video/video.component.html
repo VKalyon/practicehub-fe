@@ -1,2 +1,8 @@
 <p>video works!</p>
-<button (click)="printVideos()">click me</button>
+<button (click)="printVideos()">Show all videos</button>
+<br>
+<br>
+<input type="file" accept="video/*" (change)="fileSelected($event)"/>
+<br>
+<br>
+<input type="text" id="videoTitle" placeholder="Enter video title">
